@@ -68,7 +68,8 @@ jobs:
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
             sudo docker compose up -d
             sudo docker compose exec web python manage.py makemigrations reviews
-            sudo docker compose exec web python manage.py collectstatic --no-input 
+            sudo docker-compose exec web python manage.py createsuperuser --noinput --username admin --email example@mail.ru --password admin
+            sudo docker compose exec web python manage.py collectstatic --no-input
 
   send_message:
     name: Send message to Telegram
