@@ -45,7 +45,7 @@ jobs:
           context: .
           file: ./api_yamdb/Dockerfile
           push: true
-          tags: chemisto/web:latest
+          tags: chemisto/yamdb_final:latest
 
   deploy:
     runs-on: ubuntu-latest
