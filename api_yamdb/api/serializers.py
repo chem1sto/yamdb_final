@@ -2,7 +2,6 @@ from django.conf import settings
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.shortcuts import get_object_or_404
 from rest_framework import serializers
-
 from reviews.models import Category, Comment, CustomUser, Genre, Review, Title
 from reviews.validators import (regex_validator, reserved_names_validator,
                                 validate_year)
