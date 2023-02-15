@@ -9,7 +9,7 @@ services:
       - ./.env
 
   web:
-    image: chemisto/api_yamdb:latest
+    image: chemisto/yamdb_final
     restart: always
     volumes:
       - static_value:/app/static/
