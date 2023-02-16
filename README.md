@@ -1,6 +1,6 @@
 # Учебный проект
 ### Индикатор состояния рабочих процессов
-![Django-app workflow](https://github.com/chem1sto/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg?event=push)
+![API YaMDb Project CI/CD](https://github.com/chem1sto/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg?event=push)
 
 ### Краткое описание
 Проект YaMDb собирает отзывы пользователей на произведения (Titles).
