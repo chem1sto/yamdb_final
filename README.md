@@ -84,7 +84,7 @@ SECRET_KEY='<secret_key>' pytest
 - Send message to Telegram - отправка уведомления в Telegram.
 
 ### Ссылка на развернутый в облачном сервисе проект
-[Yandex Cloud](http://51.250.2.221/admin/login/?next=/admin/)
+Проект доступен по ссылке [Yandex Cloud](http://51.250.2.221/admin/login/?next=/admin/)
 
 ### Документация
 [Redoc](http://51.250.2.221/redoc/)
