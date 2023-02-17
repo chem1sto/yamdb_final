@@ -83,6 +83,10 @@ SECRET_KEY='<secret_key>' pytest
 - Deploy on Server - автоматический деплой проекта на боевой сервер. Выполняется копирование файлов из DockerHub на сервер;
 - Send message to Telegram - отправка уведомления в Telegram.
 
+11. После успешного деплоя доступно создание суперпользователя:
+```
+docker-compose exec web python manage.py createsuperuser
+```
 ### Ссылка на развернутый в облачном сервисе проект
 Проект доступен по ссылке [Yandex Cloud](http://51.250.2.221/admin/login/?next=/admin/)
 
