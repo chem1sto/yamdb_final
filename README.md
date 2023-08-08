@@ -9,7 +9,12 @@ YaMDb собирает отзывы пользователей на произв
 
 Для приложения настроен Continuous Integration (CI) и Continuous Deployment (CD).
 
-### Технологии
+### Авторы
+- Евгения Воропай | [jeniavoropay](https://github.com/jeniavoropay)
+- Владимир Васильев | [chem1sto](https://github.com/chem1sto)
+- Павел Вервейн | [hive937](https://github.com/hive937)
+
+### Техно-стек
 - Python 3.10
 - Django 2.2.16
 - Django Rest Framework 3.12.4
@@ -92,8 +97,3 @@ docker-compose exec web python manage.py createsuperuser
 
 ### Документация
 [Redoc](http://51.250.2.221/redoc/)
-
-### Авторы
-- Евгения Воропай | [jeniavoropay](https://github.com/jeniavoropay)
-- Владимир Васильев | [chem1sto](https://github.com/chem1sto)
-- Павел Вервейн | [hive937](https://github.com/hive937)
