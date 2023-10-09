@@ -96,8 +96,8 @@ YaMDb собирает отзывы пользователей на произв
    ```
    docker-compose exec web python manage.py createsuperuser
    ```
-### Ссылка на развернутый в облачном сервисе проект
-Проект доступен по ссылке [Yandex Cloud](http://51.250.2.221/admin/login/?next=/admin/)
+### Ссылка на развернутый на виртуальном сервере проект
+Доступен по ссылке [Yandex Cloud](http://51.250.2.221/admin/login/?next=/admin/)
 
 ### Документация
 [Redoc](http://51.250.2.221/redoc/)
