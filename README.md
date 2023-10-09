@@ -77,11 +77,11 @@ YaMDb собирает отзывы пользователей на произв
    ```text
    SECRET_KEY='<secret_key>'             # стандартный ключ, который создается при старте проекта
    PROD_FLAG=True                        # опция отладчика True/False
-   ALLOWED_HOSTS                         # список хостов/доменов, для которых доступен текущий проект
+   ALLOWED_HOSTS=['*']                   # список хостов/доменов, для которых доступен текущий проект
    ENGINE=django.db.backends.postgresql  # используемый движок Postgres для работы базы данных
-   DB_NAME                               # имя БД - postgres (по умолчанию)
-   POSTGRES_USER                         # логин для подключения к БД - postgres (по умолчанию)
-   POSTGRES_PASSWORD                     # пароль для подключения к БД (установите свой)
+   DB_NAME=postgres                      # имя БД - postgres (по умолчанию)
+   POSTGRES_USER=postgres                # логин для подключения к БД - postgres (по умолчанию)
+   POSTGRES_PASSWORD=password            # пароль для подключения к БД (установите свой)
    DB_HOST=db                            # название сервиса (контейнера)
    DB_PORT=5432                          # порт для подключения к БД
    ```
