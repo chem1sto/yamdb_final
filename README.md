@@ -52,7 +52,10 @@ YaMDb собирает отзывы пользователей на произв
    ```bash
    pip install -r requirements.txt
    ```
-6. Создайте директорию .github/workflows:
+6. Перейдите на уровень ФС выше и создайте директорию .github/workflows:
+   ```bash
+   cd ..
+   ```
    ```bash
    mkdir .github/workflows
    ```
