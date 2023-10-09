@@ -52,22 +52,11 @@ YaMDb собирает отзывы пользователей на произв
    ```bash
    pip install -r requirements.txt
    ```
-6. Перейдите на уровень ФС выше и создайте директорию .github/workflows:
+6. Перейдите в директорию infra:
    ```bash
-   cd ..
+   cd cd ../infra/
    ```
-   ```bash
-   mkdir .github/workflows
-   ```
-7. Скопируйте в созданную директорию файл yamdb_workflow.yml:
-   ```bash
-   cp yamdb_workflow.yml .github/workflows/yamdb_workflow.yml
-   ```
-8. Перейдите в директорию infra:
-   ```bash
-   cd infra/
-   ```
-9. Создайте файл .env с переменными окружения:
+7. Создайте файл .env с переменными окружения:
    ```bash
    touch .env
    ```
@@ -85,20 +74,20 @@ YaMDb собирает отзывы пользователей на произв
    DB_HOST=db                            # название сервиса (контейнера)
    DB_PORT=5432                          # порт для подключения к БД
    ```
-10. Перейдите на уровень выше и запустите pytest:
+8. Перейдите на уровень выше и запустите pytest:
    ```bash
    cd ..
    ```
    ```bash
    pytest
    ```
-11. При push в ветку main автоматически отрабатывают сценарии:
+9. При push в ветку main автоматически отрабатывают сценарии:
     - Test Project - проверка кода на соответствие стандарту PEP8 и запуск pytest. Дальнейшие шаги выполняются, только если push был выполнен в ветку main;
     - Push Docker image to Docker Hub - сборка и доставка докер-образов на DockerHub
     - Deploy on Server - автоматический деплой проекта на боевой сервер. Выполняется копирование файлов из DockerHub на сервер;
     - Send message to Telegram - отправка уведомления в Telegram.
 
-12. После успешного деплоя доступно создание суперпользователя:
+10. После успешного деплоя доступно создание суперпользователя:
    ```
    docker-compose exec web python manage.py createsuperuser
    ```
