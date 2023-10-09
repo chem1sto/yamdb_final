@@ -22,71 +22,75 @@
 ### Запуск проекта
 ### Запуск проекта
 1. Клонируйте репозиторий:
-```
-git@github.com:chem1sto/yamdb_final.git
-```
+   ```bash
+   git clone git@github.com:chem1sto/yamdb_final.git
+   ```
 2. Перейдите в него в командной строке:
-```
-cd yamdb_final/
-```
-3. Cоздайте и активируйте виртуальное окружение:
-```
-python3 -m venv venv
-```
-```
-source env/bin/activate
-```
-4. Установите зависимости из файла requirements.txt:
-```
-python3 -m pip install --upgrade pip
-```
-```
-pip install -r requirements.txt
-```
-5. Создайте директорию .github/workflows:
-```
-mkdir .github/workflows
-```
-6. Скопируйте в созданную директорию файл yamdb_workflow.yml:
-```
-cp yamdb_workflow.yml .github/workflows/yamdb_workflow.yml
-```
-7. Перейдите в директорию infra:
-```
-cd infra/
-```
-8. Создайте файл .env с переменными окружения:
-```
-touch .env
-```
-```
-nano .env
-```
-```
-SECRET_KEY='<secret_key>'             # стандартный ключ, который создается при старте проекта
-PROD_FLAG=True                        # опция отладчика True/False
-ALLOWED_HOSTS                         # список хостов/доменов, для которых доступен текущий проект
-ENGINE=django.db.backends.postgresql  # используемый движок Postgres для работы базы данных
-DB_NAME                               # имя БД - postgres (по умолчанию)
-POSTGRES_USER                         # логин для подключения к БД - postgres (по умолчанию)
-POSTGRES_PASSWORD                     # пароль для подключения к БД (установите свой)
-DB_HOST=db                            # название сервиса (контейнера)
-DB_PORT=5432                          # порт для подключения к БД
-```
-9. Запустите pytest:
-```
-SECRET_KEY='<secret_key>' pytest
-```
-10. При push в ветку main автоматически отрабатывают сценарии:
-- Test Project - проверка кода на соответствие стандарту PEP8 и запуск pytest. Дальнейшие шаги выполняются, только если push был выполнен в ветку main;
-- Push Docker image to Docker Hub - сборка и доставка докер-образов на DockerHub
-- Deploy on Server - автоматический деплой проекта на боевой сервер. Выполняется копирование файлов из DockerHub на сервер;
-- Send message to Telegram - отправка уведомления в Telegram.
+   ```bash
+   cd yamdb_final/
+   ```
+3. Создайте и активируйте виртуальное окружение:
+   ```bash
+   python3 -m venv venv
+   ```
+   ```bash
+   . venv/bin/activate
+   ```
+4. Обновите систему управления пакетами pip:
+   ```bash
+   python3 -m pip install --upgrade pip
+   ```
+5. Перейдите в папку api_yamdb и установите зависимости из файла requirements.txt
+   ```bash
+   cd api_yamdb
+   ```
+   ```bash
+   pip install -r requirements.txt
+   ```
+6. Создайте директорию .github/workflows:
+   ```bash
+   mkdir .github/workflows
+   ```
+7. Скопируйте в созданную директорию файл yamdb_workflow.yml:
+   ```bash
+   cp yamdb_workflow.yml .github/workflows/yamdb_workflow.yml
+   ```
+8. Перейдите в директорию infra:
+   ```bash
+   cd infra/
+   ```
+9. Создайте файл .env с переменными окружения:
+   ```bash
+   touch .env
+   ```
+   ```bash
+   nano .env
+   ```
+   ```text
+   SECRET_KEY='<secret_key>'             # стандартный ключ, который создается при старте проекта
+   PROD_FLAG=True                        # опция отладчика True/False
+   ALLOWED_HOSTS                         # список хостов/доменов, для которых доступен текущий проект
+   ENGINE=django.db.backends.postgresql  # используемый движок Postgres для работы базы данных
+   DB_NAME                               # имя БД - postgres (по умолчанию)
+   POSTGRES_USER                         # логин для подключения к БД - postgres (по умолчанию)
+   POSTGRES_PASSWORD                     # пароль для подключения к БД (установите свой)
+   DB_HOST=db                            # название сервиса (контейнера)
+   DB_PORT=5432                          # порт для подключения к БД
+   ```
+10. Запустите pytest:
+   ```bash
+   SECRET_KEY='<secret_key>' pytest
+   ```
+11. При push в ветку main автоматически отрабатывают сценарии:
+    - Test Project - проверка кода на соответствие стандарту PEP8 и запуск pytest. Дальнейшие шаги выполняются, только если push был выполнен в ветку main;
+    - Push Docker image to Docker Hub - сборка и доставка докер-образов на DockerHub
+    - Deploy on Server - автоматический деплой проекта на боевой сервер. Выполняется копирование файлов из DockerHub на сервер;
+    - Send message to Telegram - отправка уведомления в Telegram.
 
-11. После успешного деплоя доступно создание суперпользователя:
-```
-docker-compose exec web python manage.py createsuperuser
-```
+12. После успешного деплоя доступно создание суперпользователя:
+   ```
+   docker-compose exec web python manage.py createsuperuser
+   ```
 ### Ссылка на развернутый в облачном сервисе проект
 Проект доступен по ссылке [Yandex Cloud](http://51.250.2.221/admin/login/?next=/admin/)
 
