@@ -92,7 +92,7 @@ YaMDb собирает отзывы пользователей на произв
    docker-compose exec web python manage.py createsuperuser
    ```
 ### Ссылка на развернутый на виртуальном сервере проект
-Доступен по ссылке [chem1sto-server](http://185.17.3.67![img.png](img.png)/admin/login/?next=/admin/)
+Доступен по ссылке [chem1sto-server](http://185.17.3.67:81/)
 
 ### Документация
-[Redoc](http://51.250.2.221/redoc/)
+[Redoc](http://185.17.3.67:81/redoc/)
