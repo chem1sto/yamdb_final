@@ -56,8 +56,8 @@ jobs:
       - name: Setup SSH
         run: |
           eval $(ssh-agent -s)
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" | ssh-keygen -p -N "" -m pem -f ~/.ssh/id_rsa
-          ssh-add ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" | ssh-keygen -p -N "" -m pem -f ~/.ssh/id_rsa_firstbyte
+          ssh-add ~/.ssh/id_rsa_firstbyte
           mkdir -p ~/.ssh
           echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
       - name: Adding Identity
