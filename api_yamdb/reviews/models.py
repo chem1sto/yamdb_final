@@ -21,13 +21,13 @@ class CustomUser(AbstractUser):
     """Кастомная модель User."""
     username = models.CharField(
         verbose_name='Имя пользователя',
-        max_length=settings.USERNAME_LENGHT,
+        max_length=settings.USERNAME_LENGTH,
         unique=True,
         validators=[regex_validator, reserved_names_validator],
     )
     email = models.EmailField(
         verbose_name='Электронная почта',
-        max_length=settings.EMAIL_LENGHT,
+        max_length=settings.EMAIL_LENGTH,
         unique=True
     )
     bio = models.TextField(
@@ -59,11 +59,11 @@ class CustomUser(AbstractUser):
 class GenreCategory(models.Model):
     """Базовый класс для категорий и жанров."""
     name = models.CharField(
-        max_length=settings.NAME_LENGHT,
+        max_length=settings.NAME_LENGTH,
         verbose_name='Название',
     )
     slug = models.SlugField(
-        max_length=settings.SLUG_LENGHT,
+        max_length=settings.SLUG_LENGTH,
         unique=True,
         verbose_name='Идентификатор',
     )
@@ -95,7 +95,7 @@ class Category(GenreCategory):
 class Title(models.Model):
     """Модель произведений."""
     name = models.CharField(
-        max_length=settings.NAME_LENGHT,
+        max_length=settings.NAME_LENGTH,
         verbose_name='Название',
     )
     year = models.IntegerField(

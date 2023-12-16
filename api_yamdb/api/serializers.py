@@ -10,12 +10,12 @@ from reviews.validators import (regex_validator, reserved_names_validator,
 class SignupSerializer(serializers.Serializer):
     """Проверка username и email перед выдачей confirmation_code."""
     username = serializers.CharField(
-        max_length=settings.USERNAME_LENGHT,
+        max_length=settings.USERNAME_LENGTH,
         required=True,
         validators=[regex_validator, reserved_names_validator]
     )
     email = serializers.EmailField(
-        max_length=settings.EMAIL_LENGHT,
+        max_length=settings.EMAIL_LENGTH,
         required=True
     )
 
@@ -23,7 +23,7 @@ class SignupSerializer(serializers.Serializer):
 class TokenSerializer(serializers.Serializer):
     """Проверка username и confirmation_code перед выдачей токена."""
     username = serializers.CharField(
-        max_length=settings.USERNAME_LENGHT,
+        max_length=settings.USERNAME_LENGTH,
         required=True,
         validators=[regex_validator, reserved_names_validator]
     )
