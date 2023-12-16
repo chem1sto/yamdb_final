@@ -53,6 +53,14 @@ jobs:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
     steps:
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+      - name: Adding Identity
+        run: |
+          ssh-add ~/.ssh/id_rsa
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
