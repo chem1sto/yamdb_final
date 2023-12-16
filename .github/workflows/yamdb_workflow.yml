@@ -55,9 +55,10 @@ jobs:
     steps:
       - name: Setup SSH
         run: |
-          mkdir -p ~/.ssh/
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa_id_rsa
-          chmod 600 ~/.ssh/id_rsa
+          eval $(ssh-agent -s)
+          ssh-add <(echo "${{ secrets.SSH_PRIVATE_KEY }}")
+          mkdir -p ~/.ssh
+          echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
       - name: Adding Identity
         run: |
           ssh-add ~/.ssh/id_rsa_firstbyte
