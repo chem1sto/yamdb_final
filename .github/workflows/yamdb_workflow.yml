@@ -59,9 +59,6 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" | ssh-add -
           mkdir -p ~/.ssh
           echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-      - name: Adding Identity
-        run: |
-          ssh-add ~/.ssh/id_rsa_firstbyte
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
