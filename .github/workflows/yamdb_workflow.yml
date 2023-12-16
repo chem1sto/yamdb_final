@@ -56,7 +56,7 @@ jobs:
       - name: Setup SSH
         run: |
           eval $(ssh-agent -s)
-          ssh-add <(echo "${{ secrets.SSH_PRIVATE_KEY }}")
+          ssh-add <(echo "${{ secrets.SSH_PRIVATE_KEY }}") | ssh-add -
           mkdir -p ~/.ssh
           echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
       - name: Adding Identity
