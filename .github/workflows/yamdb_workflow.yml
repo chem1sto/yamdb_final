@@ -56,8 +56,8 @@ jobs:
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh/
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa_id_rsa_firstbyte
-          chmod 600 ~/.ssh/id_rsa_firstbyte
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa_id_rsa
+          chmod 600 ~/.ssh/id_rsa
       - name: Adding Identity
         run: |
           ssh-add ~/.ssh/id_rsa_firstbyte
