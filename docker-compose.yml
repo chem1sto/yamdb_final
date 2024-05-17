@@ -6,25 +6,28 @@ services:
     volumes:
       - db_value:/var/lib/postgresql/data/
     env_file:
-      - ./.env
+      - .env
+    command:
+      -p 5433
 
   web:
-    image: chemisto/yamdb_final
+    build: ./api_yamdb/
     restart: always
+    env_file:
+      - .env
     volumes:
       - static_value:/app/static/
       - media_value:/app/media/
     depends_on:
       - db
-    env_file:
-      - ./.env
+
 
   nginx:
     image: nginx:1.21.3-alpine
     ports:
-      - "81:81"
+      - "8001:80"
     volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./infra/nginx/default.conf:/etc/nginx/conf.d/default.conf
       - static_value:/var/html/static/
       - media_value:/var/html/media/
     depends_on:
