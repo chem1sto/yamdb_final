@@ -1,5 +1,6 @@
-from api_yamdb import settings
 from django.test import override_settings
+
+from api_yamdb import settings
 
 
 class TestSettings:
