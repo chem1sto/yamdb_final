@@ -11,7 +11,7 @@ services:
       -p 5433
 
   web:
-    build: ../api_yamdb
+    image: chemisto/yamdb_final:latest
     restart: always
     env_file:
       - ../.env
