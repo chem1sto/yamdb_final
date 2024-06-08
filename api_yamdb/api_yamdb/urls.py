@@ -11,7 +11,9 @@ schema_view = get_schema_view(
     openapi.Info(
         title="API yamdb",
         default_version='v1',
-        description="Документация для приложения api_yamdb проекта yamdb_final",
+        description=(
+            "Документация для приложения api_yamdb проекта yamdb_final"
+        ),
         contact=openapi.Contact(email="admin@yamdb.ru"),
         license=openapi.License(name="BSD License"),
     ),
@@ -44,7 +46,6 @@ urlpatterns = [
         name="schema-redoc",
     ),
 ]
-
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,
