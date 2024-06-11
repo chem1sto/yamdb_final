@@ -53,7 +53,7 @@ jobs:
       - name: Push to Docker Hub
         uses: docker/build-push-action@v5
         with:
-          file: Dockerfile
+          file: ./api_yamdb/Dockerfile
           push: true
           tags: chemisto/yamdb_final:latest
 
