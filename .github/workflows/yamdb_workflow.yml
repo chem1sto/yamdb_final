@@ -12,9 +12,11 @@ jobs:
         python-version: [ "3.10", "3.11" ]
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -49,9 +51,9 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push to Docker Hub
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v5
         with:
-          file: ./api_yamdb/Dockerfile
+          file: Dockerfile
           push: true
           tags: chemisto/yamdb_final:latest
 
