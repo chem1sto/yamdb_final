@@ -12,12 +12,10 @@ services:
     volumes:
       - db_value:/var/lib/postgresql/data/
     env_file:
-      - ../.env
+      - ../.env.db
 
   yamdb_backend:
     image: chemisto/yamdb_final:latest
-    build:
-        context: ../
     env_file:
       - ../.env
     volumes:
