@@ -4,15 +4,17 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
-load_dotenv(os.path.join(os.path.dirname(__file__), '.env.db'))
-
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+load_dotenv(BASE_DIR.parent / '.env')
+load_dotenv(BASE_DIR.parent / '.env.db')
 
 SECRET_KEY = os.getenv('SECRET_KEY',
                        default='p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs')
 
 DEBUG = os.getenv('DEBUG', default='False') == 'True'
+
+DB_NAME = os.getenv('DB_NAME')
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS',
                           default='127.0.0.1, localhost').split(', ')
