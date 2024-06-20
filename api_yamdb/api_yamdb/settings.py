@@ -2,19 +2,20 @@ import os
 from datetime import timedelta
 from pathlib import Path
 
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
+
+dotenv_path = find_dotenv('.env')
+load_dotenv(dotenv_path)
+
+dotenv_db_path = find_dotenv('.env.db')
+load_dotenv(dotenv_db_path)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-load_dotenv(BASE_DIR.parent / '.env')
-load_dotenv(BASE_DIR.parent / '.env.db')
 
 SECRET_KEY = os.getenv('SECRET_KEY',
                        default='p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs')
 
 DEBUG = os.getenv('DEBUG', default='False') == 'True'
-
-DB_NAME = os.getenv('DB_NAME')
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS',
                           default='127.0.0.1, localhost').split(', ')
