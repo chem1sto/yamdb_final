@@ -23,7 +23,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path(
-        'admin/',
+        'yamdb_backend/admin/',
         admin.site.urls
     ),
     path(
